@@ -1,0 +1,27 @@
+{
+  "name": "wordcloud-app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonHuang2019/wordcloud.git"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "grunt": "grunt"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-cli": "",
+    "grunt-contrib-clean": "",
+    "grunt-contrib-concat": "",
+    "grunt-contrib-connect": "",
+    "grunt-contrib-copy": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-qunit": "",
+    "grunt-contrib-uglify": "",
+    "grunt-gh-pages": "",
+    "grunt-replace": "",
+    "grunt-rev": "",
+    "grunt-shell": "",
+    "grunt-usemin": ""
+  }
+}

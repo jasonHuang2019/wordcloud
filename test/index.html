@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>wordcloud app tests</title>
+  <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.12.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <script src="http://code.jquery.com/qunit/qunit-1.12.0.js"></script>
+  <script>
+    QUnit.config.testTimeout = 10*1E3;
+  </script>
+
+  <!-- util -->
+  <script src="util.js"></script>
+
+  <!-- dependencies -->
+  <script src="../assets/wordfreq/src/wordfreq.js"></script>
+  <script src="../assets/wordfreq/src/wordfreq.worker.js"></script>
+  <script src="../assets/wordcloud2.js/src/wordcloud2.js"></script>
+
+  <!-- script to test -->
+  <script src="../assets/app.js" defer></script>
+  <script src="../assets/views.js" defer></script>
+  <script src="../assets/canvas-view.js" defer></script>
+  <script src="../assets/source-dialog-view.js" defer></script>
+  <script src="../assets/dashboard-view.js" defer></script>
+  <script src="../assets/sharer-dialog-view.js" defer></script>
+  <script src="../assets/panels.js" defer></script>
+  <script src="../assets/fetchers.js" defer></script>
+
+  <!-- test scripts -->
+  <script src="unit/app.js"></script>
+  <script src="unit/fetchers.js"></script>
+</body>
+</html>
