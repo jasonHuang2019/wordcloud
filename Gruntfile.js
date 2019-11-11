@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     distDir: 'production',
-    httpdPort: 28080 + Math.floor(Math.random() * 10),
+    httpdPort: 8081,
     clean: {
       dist: '<%= distDir %>'
     },
