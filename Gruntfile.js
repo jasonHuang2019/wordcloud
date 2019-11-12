@@ -109,7 +109,8 @@ module.exports = function(grunt) {
     connect: {
       test: {
         options: {
-          port: '<%= httpdPort %>'
+	 keepalive: true,
+	 port: '<%= httpdPort %>'
         }
       }
     },
@@ -152,7 +153,8 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jshint', 'test-phantomjs']);
 
   // Run the test suite with QUnit on PhantomJS
-  grunt.registerTask('test-phantomjs', ['connect', 'qunit']);
+//  grunt.registerTask('test-phantomjs', ['connect', 'qunit']);
+  grunt.registerTask('test-phantomjs', ['connect']);
 
   grunt.registerTask('checkvars', function() {
     var done = this.async();
