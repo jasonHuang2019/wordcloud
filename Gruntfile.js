@@ -153,8 +153,14 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jshint', 'test-phantomjs']);
 
   // Run the test suite with QUnit on PhantomJS
+<<<<<<< HEAD
 //  grunt.registerTask('test-phantomjs', ['connect', 'qunit']);
   grunt.registerTask('test-phantomjs', ['connect']);
+=======
+  //  grunt.registerTask('test-phantomjs', ['connect', 'qunit']);
+  grunt.registerTask('test-phantomjs', ['connect']);
+
+>>>>>>> 8ea103b374dd038849956d5aef6d8e4df493e372
 
   grunt.registerTask('checkvars', function() {
     var done = this.async();
