@@ -104,11 +104,12 @@ window.onerror = function onerror(message, url, line) {
   var sourceDialogView = new SourceDialogView();
   app.addView(sourceDialogView);
 
-  sourceDialogView.addPanel(new ExamplePanelView());
+
   sourceDialogView.addPanel(new CPPanelView());
-  sourceDialogView.addPanel(new FilePanelView());
-  sourceDialogView.addPanel(new WikipediaPanelView());
-  sourceDialogView.addPanel(new GooglePlusPanelView());
+ // sourceDialogView.addPanel(new ExamplePanelView());
+  // sourceDialogView.addPanel(new FilePanelView());
+  // sourceDialogView.addPanel(new WikipediaPanelView());
+  // sourceDialogView.addPanel(new GooglePlusPanelView());
 
   app.addFetcher(new TextFetcher());
   app.addFetcher(new FileFetcher());

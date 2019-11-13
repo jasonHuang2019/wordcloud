@@ -67,7 +67,7 @@ var SharerDialogView = function SharerDialogView(opts) {
   ];
 };
 SharerDialogView.prototype = new View();
-SharerDialogView.prototype.HASHTAG = '#HTML5WordCloud';
+SharerDialogView.prototype.HASHTAG = '#WordCloud Demo';
 SharerDialogView.prototype.TWITTER_SHARE_URL =
   'https://twitter.com/home/?status=';
 SharerDialogView.prototype.PLURK_SHARE_URL =

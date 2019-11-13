@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>HTML5 Word Cloud</title>
+  <title>WordCloud Demo</title>
 
   <meta name="apple-mobile-web-app-title" content="Word Cloud">
   <link rel="apple-touch-icon-precomposed" href="./assets/images/wordcloud-logo.png" />
@@ -15,7 +15,7 @@
 
   <!-- Unfortunately we need to hard-code these in HTML -->
   <meta property="og:url" content="http://timdream.org/wordcloud/" />
-  <meta property="og:title" content="HTML5 Word Cloud" />
+  <meta property="og:title" content="WordCloud Demo" />
   <meta property="fb:admins" content="541998202" />
   <meta property="fb:app_id" content="221493074531416" />
 
@@ -87,26 +87,27 @@
       <h3 data-l10n-id="source-dialog-title" id="wc-source-title" class="pull-left"></h3>
       <div class="pull-right">
         <select id="wc-source-selection" class="input-medium"></select>
-        <button data-l10n-id="source-dialog-about-btn" id="wc-source-about-btn" class="btn btn-info"></button>
+        <button style="display:none;" data-l10n-id="source-dialog-about-btn" id="wc-source-about-btn" class="btn btn-info"></button>
       </div>
     </div>
     <div class="modal-body">
       <div class="row-fluid">
         <div class="span3 tabbable tabs-left">
           <ul id="wc-source-menu" class="nav nav-tabs">
-            <li hidden>
+            <li hidden >
               <a href="#" data-l10n-id="source-example" data-panel="example"></a>
             </li>
 
-            <li hidden>
+            <li hidden >
               <a href="#" data-l10n-id="source-wikipedia" data-panel="wikipedia"></a></li>
 
-            <li hidden>
+            <li hidden >
               <a href="#" data-l10n-id="source-googleplus" data-panel="googleplus"></a></li>
 
             <li hidden>
               <a href="#" data-l10n-id="source-cp" data-panel="cp"></a></li>
-            <li hidden>
+			  
+            <li hidden >
               <a href="#" data-l10n-id="source-file" data-panel="file"></a></li>
           </ul>
         </div>
@@ -184,7 +185,7 @@ A demo page is available for fine-grain control of the backend library.</p>
             </div>
             <span data-l10n-id="panel-googleplus-help" class="help-block"></span>
             <p id="wc-panel-googleplus-status" data-l10n-id="loading"></p>
-          </form>
+          </form> 
 
         </div>
       </div>
@@ -195,7 +196,7 @@ A demo page is available for fine-grain control of the backend library.</p>
         <span class="add-on"><i class="icon-globe"></i></span>
         <select id="wc-language" class="input-small">
           <option value="en-US" selected>English</option>
-          <option value="zh-TW">正體中文</option>
+          <option value="zh-TW" >简体中文</option>
         </select>
       </div>
 
@@ -234,7 +235,7 @@ A demo page is available for fine-grain control of the backend library.</p>
               <a data-l10n-id="dashboard-save-disk-btn" data-canvas-ctl download="wordcloud.png" href="#" data-action="save" class="btn disabled" title="Save to disk"><i class="icon-hdd"></i><span data-l10n-id="dashboard-save-disk-span"></span></a>
             </div>
 
-            <div class="btn-group">
+            <div class="btn-group" style="display:none;">
               <button data-l10n-id="dashboard-share-btn" data-canvas-ctl data-action="share" class="btn disabled btn-primary" title="Share"><i class="icon-share"></i><span data-l10n-id="dashboard-share-span"</button>
             </div>
 
@@ -248,7 +249,7 @@ A demo page is available for fine-grain control of the backend library.</p>
     <div class="modal-body">
       <label data-l10n-id="list-dialog-label" for="wc-list-edit"></label>
         <textarea id="wc-list-edit" class="input-block-level" rows="14"></textarea>
-        <span data-l10n-id="list-dialog-help" class="help-block"></span>
+        <span style="display:none;" data-l10n-id="list-dialog-help" class="help-block"></span>
     </div>
     <div class="modal-footer">
       <button data-l10n-id="list-dialog-cancel-btn" id="wc-list-cancel-btn" class="btn"></button>
@@ -336,7 +337,7 @@ A demo page is available for fine-grain control of the backend library.</p>
     </div>
   </div>
 
-  <div id="wc-sns-push" hidden>
+  <div id="wc-sns-push" hidden  style="display:none;" >
     <div class="button" id="wc-sns-facebook">
       <iframe id="-iframe" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
     </div>
