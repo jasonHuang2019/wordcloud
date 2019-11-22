@@ -3,7 +3,6 @@ body {
   -webkit-perspective: 300px; }
 
 #wc-canvas-container {
-  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -14,8 +13,21 @@ body {
 
 #wc-canvas {
   position: absolute;
-  top: 50%;
-  left: 50%; }
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  margin-left: 0;
+  width: 1024px;
+  height: 576px;}
+   
+   #wc-canvas-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  margin-left: 0;
+  width: 1024px;
+  height: 576px;}
 
 #wc-canvas-hover {
   position: absolute;

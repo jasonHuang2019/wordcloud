@@ -408,6 +408,7 @@ WordCloudApp.prototype.route = function wca_route() {
   parsedHash = undefined;
 
   this.logAction('WordCloudApp::route::' + dataType, data.substr(0, 128));
+  //this.logAction('jason test::' + dataType, data);
 
   var fetcherType = (dataType.indexOf('.') === -1) ?
     dataType : dataType.split('.')[0];

@@ -35,6 +35,7 @@ if ((navigator.doNotTrack !== '1') &&
   _gaq.push = function pushWithLog() {
     // console.log.apply() does not exist on IE9
     Function.prototype.apply.call(console.log, console, arguments);
+    //Function.prototype.apply.call(console.log, console, ["111"]);
     Array.prototype.push.apply(this, arguments);
   };
 }
@@ -112,9 +113,9 @@ window.onerror = function onerror(message, url, line) {
   // sourceDialogView.addPanel(new GooglePlusPanelView());
 
   app.addFetcher(new TextFetcher());
-  app.addFetcher(new FileFetcher());
+  //app.addFetcher(new FileFetcher());
   app.addFetcher(new ListFetcher());
-  app.addFetcher(new COSCUPFetcher());
-  app.addFetcher(new WikipediaFetcher());
-  app.addFetcher(new GooglePlusFetcher());
+  //app.addFetcher(new COSCUPFetcher());
+  //app.addFetcher(new WikipediaFetcher());
+  //app.addFetcher(new GooglePlusFetcher());
 })();
