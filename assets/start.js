@@ -89,18 +89,18 @@ window.onerror = function onerror(message, url, line) {
   var langSwitcherView = new LanguageSwitcherView();
   langSwitcherView.app = app;
 
-  var snsPushView = new SNSPushView();
-  snsPushView.show();
+  // var snsPushView = new SNSPushView();
+  // snsPushView.show();
 
-  var psmView = new PSMView();
-  psmView.show();
+  // var psmView = new PSMView();
+  // psmView.show();
 
   app.addView(new CanvasView());
   app.addView(new LoadingView());
   app.addView(new DashboardView());
   app.addView(new ListDialogView());
-  app.addView(new SharerDialogView());
-  app.addView(new AboutDialogView());
+  //app.addView(new SharerDialogView());
+  //app.addView(new AboutDialogView());
 
   var sourceDialogView = new SourceDialogView();
   app.addView(sourceDialogView);

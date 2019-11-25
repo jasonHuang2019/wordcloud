@@ -64,16 +64,24 @@ var WordCloudApp = function WordCloudApp() {
   this.views = {};
   this.currentUIState = this.UI_STATE_LOADING;
 
+	// WordCloudApp.prototype.UI_STATE_LOADING = 0;
+	// WordCloudApp.prototype.UI_STATE_SOURCE_DIALOG = 1;
+	// WordCloudApp.prototype.UI_STATE_WORKING = 2;
+	// WordCloudApp.prototype.UI_STATE_DASHBOARD = 3;
+	// WordCloudApp.prototype.UI_STATE_LIST_DIALOG = 4;
+	// WordCloudApp.prototype.UI_STATE_ERROR_WITH_DASHBOARD = 5;
+	// WordCloudApp.prototype.UI_STATE_SHARER_DIALOG = 6;
+	// WordCloudApp.prototype.UI_STATE_ABOUT_DIALOG = 7;
   // This array decides which view to show() when the UI state changes.
   this.UIStateViewMap = [
-    ['loading'],
-    ['canvas', 'source-dialog'],
-    ['loading', 'dashboard'],
-    ['canvas', 'dashboard'],
-    ['canvas', 'dashboard', 'list-dialog'],
-    ['loading', 'dashboard'],
-    ['canvas', 'dashboard', 'sharer-dialog'],
-    ['canvas', 'about-dialog']
+    ['loading'], //0
+    ['canvas', 'source-dialog'],//1
+    ['loading', 'dashboard'],//2
+    ['canvas', 'dashboard'],//3
+    ['canvas', 'dashboard', 'list-dialog'],//4
+    ['loading', 'dashboard'],//5
+    ['canvas', 'dashboard', 'sharer-dialog'],//6
+    ['canvas', 'about-dialog']//7
   ];
 
   this.wordfreqOption = {
