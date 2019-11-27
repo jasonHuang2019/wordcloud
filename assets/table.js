@@ -70,14 +70,14 @@ var table = new Tabulator("#example-table", {
     layout:"fitColumns",
     columns:[
         {title:"Name", field:"name", width:150, editor:"input"},
-       {title:"Favourite Color", field:"col", formatter:"color",width:150, widthGrow:3},
+       {title:"Favourite Color", field:"col", formatter:"color",width:40, widthGrow:3},
         //{title:"Location", field:"location", width:130, editor:"autocomplete", editorParams:{allowEmpty:true, showListOnEmpty:true, values:true}},
 		
-        {title:"Progress", field:"progress", sorter:"number", align:"left",  width:140, editor:true},
-        {title:"Gender", field:"gender", editor:"select", editorParams:{values:{"male":"Male", "female":"Female", "unknown":"Unknown"}}},
-        {title:"Rating", field:"rating",  formatter:"star", align:"center", width:100, editor:true},
-        {title:"Date Of Birth", field:"dob", align:"center", sorter:"date", width:140, editor:dateEditor},
-        {title:"Driver", field:"car", align:"center", editor:true, formatter:"tickCross"},
+        {title:"Progress", field:"progress", sorter:"number", align:"left",  width:60, editor:true},
+        {title:"Gender", field:"gender", editor:"select", width:60, editorParams:{values:{"male":"Male", "female":"Female", "unknown":"Unknown"}}},
+        {title:"Rating", field:"rating",  formatter:"star", align:"center", width:60, editor:true},
+        {title:"Date Of Birth", field:"dob", align:"center", sorter:"date", width:60, editor:dateEditor},
+        {title:"Driver", field:"car", align:"center", editor:true, width:60, formatter:"tickCross"},
 		
 		// {title:"Progress", field:"progress", sorter:"number", align:"left", formatter:"progress", width:140, editor:true},
 		// {title:"Gender", field:"gender", widthGrow:2},
