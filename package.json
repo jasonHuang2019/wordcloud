@@ -23,5 +23,8 @@
     "grunt-rev": "",
     "grunt-shell": "",
     "grunt-usemin": ""
+  },
+  "dependencies": {
+    "tabulator-tables": "^4.5.1"
   }
 }

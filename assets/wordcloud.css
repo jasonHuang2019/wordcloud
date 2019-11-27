@@ -68,15 +68,17 @@ body {
 :lang(en-US) .only-zh-TW {
   display: none; }
 
-#wc-source-dialog,
-#wc-dashboard {
+
+/* #wc-dashboard, */
+#wc-source-dialog {
   transition: opacity 0.5s ease, transform 0.5s ease;
   -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transform-origin: center 80%;
   -webkit-transform-origin: center 80%; }
   
-  #wc-source-dialog[hidden],
-  #wc-dashboard[hidden] {
+  
+  /* #wc-dashboard[hidden], */
+  #wc-source-dialog[hidden] {
     transition: visibility 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
     -webkit-transition: visibility 0.5s ease, opacity 0.5s ease, -webkit-transform 0.5s ease;
     display: inherit;
@@ -203,23 +205,23 @@ body {
   width: 250px;
   height: 250px; }
 
-#wc-dashboard {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; }
-  #wc-dashboard > .container {
-    margin-top: 10px; }
-  #wc-dashboard .hide-label > span {
-    display: none; }
-  @media (min-width: 1200px) {
-    #wc-dashboard .hide-label > span {
-      display: inherit; } }
-  @media (max-width: 979px) {
-    #wc-dashboard button > span, #wc-dashboard a > span {
-      display: none; } }
-  #wc-dashboard .btn > span {
-    padding-left: 5px; }
+/* #wc-dashboard { */
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
+  /* width: 100%; } */
+  /* #wc-dashboard > .container { */
+    /* margin-top: 10px; } */
+  /* #wc-dashboard .hide-label > span { */
+    /* display: none; } */
+  /* @media (min-width: 1200px) { */
+    /* #wc-dashboard .hide-label > span { */
+      /* display: inherit; } } */
+  /* @media (max-width: 979px) { */
+    /* #wc-dashboard button > span, #wc-dashboard a > span { */
+      /* display: none; } } */
+  /* #wc-dashboard .btn > span { */
+    /* padding-left: 5px; } */
 
 .wc-sharer-service-title {
   font-weight: bold; }

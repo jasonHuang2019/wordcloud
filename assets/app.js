@@ -65,27 +65,33 @@ var WordCloudApp = function WordCloudApp() {
   this.currentUIState = this.UI_STATE_LOADING;
 
 	// WordCloudApp.prototype.UI_STATE_LOADING = 0;
-	// WordCloudApp.prototype.UI_STATE_SOURCE_DIALOG = 1;
+	// WordCloudApp.prototype.UI_STATE_MAIN_PAGE = 1;
 	// WordCloudApp.prototype.UI_STATE_WORKING = 2;
 	// WordCloudApp.prototype.UI_STATE_DASHBOARD = 3;
 	// WordCloudApp.prototype.UI_STATE_LIST_DIALOG = 4;
 	// WordCloudApp.prototype.UI_STATE_ERROR_WITH_DASHBOARD = 5;
 	// WordCloudApp.prototype.UI_STATE_SHARER_DIALOG = 6;
 	// WordCloudApp.prototype.UI_STATE_ABOUT_DIALOG = 7;
+	//WordCloudApp.prototype.UI_STATE_SOURCE_DIALOG = 8;
   // This array decides which view to show() when the UI state changes.
   this.UIStateViewMap = [
     ['loading'], //0
-    ['canvas', 'source-dialog'],//1
+    //['canvas', 'source-dialog'],//1
+    ['canvas', 'dashboard'],//1
     ['loading', 'dashboard'],//2
     ['canvas', 'dashboard'],//3
     ['canvas', 'dashboard', 'list-dialog'],//4
     ['loading', 'dashboard'],//5
     ['canvas', 'dashboard', 'sharer-dialog'],//6
-    ['canvas', 'about-dialog']//7
+    ['canvas', 'about-dialog'],//7
+    ['canvas', 'dashboard','source-dialog']//8
   ];
 
   this.wordfreqOption = {
-    workerUrl: './assets/wordfreq/src/wordfreq.worker.js?_=@@timestamp'
+    workerUrl: './assets/wordfreq/src/wordfreq.worker.js?_=@@timestamp',
+	minimumCount: 2,
+	maxiumPhraseLength:8,
+	languages: 'chinese'
   };
 
   this.shapes = [
@@ -194,8 +200,11 @@ var WordCloudApp = function WordCloudApp() {
     shape: 0,
     gridSize: undefined,
     weightFactor: undefined,
-    drawOutOfBound: true
+    drawOutOfBound: false
   };
+  
+ 
+ 
 };
 WordCloudApp.prototype.addView = function wca_addView(view) {
   this.views[view.name] = view;
@@ -246,13 +255,14 @@ WordCloudApp.prototype.reset = function wca_reset() {
   }
 };
 WordCloudApp.prototype.UI_STATE_LOADING = 0;
-WordCloudApp.prototype.UI_STATE_SOURCE_DIALOG = 1;
+WordCloudApp.prototype.UI_STATE_MAIN_PAGE = 1;
 WordCloudApp.prototype.UI_STATE_WORKING = 2;
 WordCloudApp.prototype.UI_STATE_DASHBOARD = 3;
 WordCloudApp.prototype.UI_STATE_LIST_DIALOG = 4;
 WordCloudApp.prototype.UI_STATE_ERROR_WITH_DASHBOARD = 5;
 WordCloudApp.prototype.UI_STATE_SHARER_DIALOG = 6;
 WordCloudApp.prototype.UI_STATE_ABOUT_DIALOG = 7;
+WordCloudApp.prototype.UI_STATE_SOURCE_DIALOG = 8;
 WordCloudApp.prototype.switchUIState = function wca_switchUIState(state) {
   if (!this.UIStateViewMap[state]) {
     throw 'Undefined state ' + state;
@@ -326,6 +336,7 @@ WordCloudApp.prototype.stopHandleData = function wca_stopHandleData() {
   }
   this.wordfreq = undefined;
 };
+
 WordCloudApp.prototype.handleList = function wca_handleList(list, vol) {
   this.logAction('WordCloudApp::handleList', list.length);
 
@@ -404,7 +415,9 @@ WordCloudApp.prototype.route = function wca_route() {
   this.stopHandleData();
 
   if (!hash) {
-    this.switchUIState(this.UI_STATE_SOURCE_DIALOG);
+	  let volume;
+    //this.switchUIState(this.UI_STATE_MAIN_PAGE);
+	this.views['source-dialog'].autoSubmit();
     this.logAction('WordCloudApp::route::source-dialog');
 
     return;

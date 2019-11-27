@@ -5,7 +5,7 @@
 var DashboardView = function DashboardView(opts) {
   this.load(opts, {
     name: 'dashboard',
-    element: 'wc-dashboard'
+    element: 'leftside-navigation'
   });
 
   var buttons = this.element.querySelectorAll('[data-action]');
@@ -36,6 +36,8 @@ DashboardView.prototype.beforeHide =
       }
     }
   };
+  
+  
 DashboardView.prototype.handleEvent = function dv_handleEvent(evt) {
   var el = evt.currentTarget;
   if (el.className.indexOf('disabled') !== -1) {
@@ -44,12 +46,25 @@ DashboardView.prototype.handleEvent = function dv_handleEvent(evt) {
 
   var app = this.app;
   var action = el.getAttribute('data-action');
-
+  var code = 0;
   this.app.logAction('DashboardView::action', action);
-
+  
+  if(action.startsWith("shape")){
+	  let strArray = action.split("shape");
+	  //console.log("shape: ", )
+	  if(strArray[1].length){
+	      action = 'shape';
+		  code = parseInt(strArray[1]);
+	  }
+  }
+  
   switch (action) {
     case 'back':
       app.reset();
+      break;
+	  
+    case 'words':
+       app.switchUIState(app.UI_STATE_SOURCE_DIALOG);
       break;
 
     case 'refresh':
@@ -66,12 +81,17 @@ DashboardView.prototype.handleEvent = function dv_handleEvent(evt) {
       break;
 
     case 'shape':
-      app.data.shape++;
-      if (app.data.shape >= app.shapes.length) {
-        app.data.shape = 0;
-      }
-
-      app.draw();
+		  //console.log("code: ", code)
+      //app.data.shape++;
+	  //if(code > -1){
+		  app.data.shape = code;
+		  
+		  if (app.data.shape >= app.shapes.length) {
+			app.data.shape = 0;
+		}
+		app.draw();
+	  //}
+      
       break;
 
     case 'edit':

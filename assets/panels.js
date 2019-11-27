@@ -63,7 +63,7 @@ var CPPanelView = function CPPanelView(opts) {
 CPPanelView.prototype = new PanelView();
 CPPanelView.prototype.submit = function cpv_submit() {
   var el = this.textareaElement;
-
+	
   if (!el.value.length) {
     // maybe a warning here?
     return;

@@ -239,7 +239,7 @@ AboutDialogView.prototype.loadContent = function adv_loadContent(lang, first) {
     iframe.onerror = (function contentLoadError() {
       this.loaded = false;
       if (!this.element.hasAttribute('hidden')) {
-        this.app.switchUIState(this.app.UI_STATE_SOURCE_DIALOG);
+        this.app.switchUIState(this.app.UI_STATE_MAIN_PAGE);
       }
     }).bind(this);
   }
@@ -281,7 +281,7 @@ AboutDialogView.prototype.handleEvent = function adv_handleEvent(evt) {
   }
 };
 AboutDialogView.prototype.close = function adv_close() {
-  this.app.switchUIState(this.app.UI_STATE_SOURCE_DIALOG);
+  this.app.switchUIState(this.app.UI_STATE_MAIN_PAGE);
 };
 
 var SNSPushView = function SNSPushView(opts) {

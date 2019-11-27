@@ -30,10 +30,26 @@ var CanvasView = function CanvasView(opts) {
     return true;
   }).bind(this));
 
+				   
+																		  
+												
+																			  
+				   
+											  
+												 
+																	  
+				   
+								  
+								  
+											 
+			
+   
   this.idleOption = {
+						  
     fontFamily: 'Times, serif',
     color: 'rgba(255, 255, 255, 0.8)',
     rotateRatio: 0.5,
+				  
     backgroundColor: 'transparent',
     wait: 75,
     list: (function generateLoveList() {
@@ -63,6 +79,9 @@ var CanvasView = function CanvasView(opts) {
       return list;
     })()
   };
+  
+		   
+	   
 };
 CanvasView.prototype = new View();
 CanvasView.prototype.TILT_DEPTH = 10;
@@ -121,10 +140,10 @@ CanvasView.prototype.setDimension = function cv_setDimension(width, height) {
   var el = this.canvasElement;
   width = width ? width : this.documentWidth;
   height = height ? height : this.documentHeight;
-  el.setAttribute('width', 1024);
-  el.setAttribute('height', 576);
-  // this.element.style.marginLeft = (- width / 2) + 'px';
-  // this.element.style.marginTop = (- height / 2) + 'px';
+  el.setAttribute('width', width);
+  el.setAttribute('height', height);
+  //this.element.style.marginLeft = (- width / 2) + 'px';
+  //this.element.style.marginTop = (- height / 2) + 'px';
 };
 CanvasView.prototype.draw = function cv_draw(option) {
   // Have generic font selected based on UI language
@@ -132,9 +151,7 @@ CanvasView.prototype.draw = function cv_draw(option) {
 
   this.hoverElement.setAttribute('hidden', true);
   option.hover = this.handleHover.bind(this);
-	
-    // this.app.logAction('jason test option' , option);
-     // console.dir(option)
+
   WordCloud(this.canvasElement, option);
 };
 CanvasView.prototype.handleHover = function cv_handleHover(item,
@@ -165,7 +182,7 @@ CanvasView.prototype.drawIdleCloud = function cv_drawIdleCloud() {
 
   // Only enable the rotation effect on non-touch capable browser.
   if (!('ontouchstart' in window)) {
-    document.addEventListener('mousemove', this);
+    //document.addEventListener('mousemove', this);
   }
 
   this.canvasElement.style[this.cssTransformProperty] = 'scale(1.2)';
