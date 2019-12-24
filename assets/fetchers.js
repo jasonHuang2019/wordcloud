@@ -21,6 +21,8 @@ TextFetcher.prototype.getData = function tf_getData(dataType, data) {
     data = decodeURIComponent(data);
   }
 
+	// console.dir("decoded data:")
+	// console.dir(data)
   // Make sure we call the handler methods as async callback.
   this.timer = setTimeout((function tf_gotData() {
     this.app.handleData(data);

@@ -150,8 +150,8 @@ CanvasView.prototype.draw = function cv_draw(option) {
   this.canvasElement.lang = '';
 
   this.hoverElement.setAttribute('hidden', true);
-  console.dir("option: ")
-  console.dir(option)
+  // console.dir("option: ")
+  // console.dir(option)
   option.hover = this.handleHover.bind(this);
 
   WordCloud(this.canvasElement, option);

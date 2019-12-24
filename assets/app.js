@@ -301,6 +301,7 @@ WordCloudApp.prototype.handleData = function wca_handleData(text, title) {
 
   var volume;
   if (WordFreq) {
+	  //console.log("async ...")
     this.wordfreq =
       WordFreq(this.wordfreqOption).process(text)
       .getVolume(function gotVolume(vol) {
@@ -322,6 +323,8 @@ WordCloudApp.prototype.handleData = function wca_handleData(text, title) {
     }).bind(this));
   }
 };
+
+
 WordCloudApp.prototype.stopHandleData = function wca_stopHandleData() {
   if (!this.wordfreq) {
     return;
@@ -434,6 +437,8 @@ WordCloudApp.prototype.route = function wca_route() {
   var fetcherType = (dataType.indexOf('.') === -1) ?
     dataType : dataType.split('.')[0];
 
+// console.dir("fetcherType: ")
+// console.dir(fetcherType)
   if (fetcherType in this.fetchers) {
     this.switchUIState(this.UI_STATE_WORKING);
     var fetcher = this.currentFetcher = this.fetchers[fetcherType];

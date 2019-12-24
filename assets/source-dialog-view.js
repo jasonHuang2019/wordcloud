@@ -124,6 +124,9 @@ SourceDialogView.prototype.autoSubmit = function sd_autoSubmit() {
 };
 
 SourceDialogView.prototype.submit = function sd_submit(hash) {
+	
+	// console.dir("hash: ")
+	// console.dir(hash)
   return this.app.pushUrlHash(hash);
 };
 SourceDialogView.prototype.showPanel = function sd_showPanel(panel) {
